@@ -1,0 +1,49 @@
+[build-system]
+requires = ["setuptools"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "ros2tcp"
+version = "0.1.1"
+description = "A bridge between TCP socket and DDS of ROS 2"
+readme = "README.md"
+requires-python = ">=3.8"
+license = { file = "LICENSE.txt" }
+keywords = ["ROS2", "Humble", "socket", "TCP"]
+
+authors = [{ name = "Bonny Babu", email = "bonnybabukachappilly@gmail.com" }]
+maintainers = [{ name = "Bonny Babu", email = "bonnybabukachappilly@gmail.com" }]
+
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.8",
+    "License :: OSI Approved :: GNU General Public License v3 (GPLv3)",
+    "Operating System :: Unix"
+]
+
+[project.optional-dependencies]
+dev = ["flake8", "tox", "mypy", "check-manifest"]
+test = ["pytest", "pytest-cov", "coverage"]
+
+[project.urls]
+"Homepage" = "https://github.com/bonnybabukachappilly/ros2TCP"
+
+[tool.pytest.ini_options]
+addopts = "--cov=slapping"
+testpaths = [
+    "tests",
+]
+
+[tool.mypy]
+mypy_path = "src"
+check_untyped_defs = true
+disallow_any_generics = true
+ignore_missing_imports = true
+no_implicit_optional = true
+show_error_codes = true
+strict_equality = true
+warn_redundant_casts = true
+warn_return_any = true
+warn_unreachable = true
+warn_unused_configs = true
+no_implicit_reexport = true

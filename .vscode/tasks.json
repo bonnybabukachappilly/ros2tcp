@@ -1,0 +1,75 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "Colcon: Build",
+            "type": "shell",
+            "options": {
+                "cwd": "${workspaceFolder}/ros_ws"
+            },
+            "linux": {
+                "command": "colcon build"
+            },
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            },
+            "problemMatcher": []
+        },
+        {
+            "label": "Colcon: Build [symlink]",
+            "type": "shell",
+            "options": {
+                "cwd": "${workspaceFolder}/ros_ws"
+            },
+            "linux": {
+                "command": "colcon build --symlink-install"
+            },
+            "group": {
+                "kind": "build",
+                "isDefault": false
+            },
+            "problemMatcher": []
+        },
+        {
+            "label": "ROS: Run Service",
+            "type": "shell",
+            "options": {
+                "cwd": "${workspaceFolder}/ros_ws"
+            },
+            "command": ". ./install/setup.bash && ros2 run srv_cli service",
+            "problemMatcher": [],
+        },
+        {
+            "label": "Poetry: Build & Publish",
+            "type": "shell",
+            "options": {
+                "cwd": "${workspaceFolder}"
+            },
+            "command": "poetry publish --build",
+            "problemMatcher": [],
+        },
+        {
+            "label": "ros2tcp: RUN",
+            "type": "shell",
+            "options": {
+                "cwd": "${workspaceFolder}/src"
+            },
+            "linux": {
+                "command": "poetry run python3 -m ros2tcp"
+            },
+            "problemMatcher": [],
+        },
+        {
+            "label": "ros2tcp: TEST",
+            "type": "shell",
+            "options": {
+                "cwd": "${workspaceFolder}"
+            },
+            "linux": {
+                "command": "pytest"
+            },
+            "problemMatcher": [],
+        },
+    ]
+}
