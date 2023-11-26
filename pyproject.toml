@@ -26,7 +26,7 @@ dev = ["flake8", "tox", "mypy", "check-manifest"]
 test = ["pytest", "pytest-cov", "coverage"]
 
 [project.urls]
-"Homepage" = "https://github.com/bonnybabukachappilly/ros2TCP"
+"Homepage" = "https://github.com/bonnybabukachappilly/ros2tcp"
 
 [tool.pytest.ini_options]
 addopts = "--cov=slapping"
